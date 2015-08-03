@@ -1,0 +1,35 @@
+{
+  "name": "node-simple-static-file-server",
+  "version": "1.0.0",
+  "description": "Dead simple web file server using node.js+Express.js+forever",
+  "main": "app.js",
+  "scripts": {
+    "start": "forever -w app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BaptisteGauduchon/node-simple-static-file-server.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "forever",
+    "morgan",
+    "web",
+    "file",
+    "server",
+    "simple"
+  ],
+  "author": "Baptiste Gauduchon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BaptisteGauduchon/node-simple-static-file-server/issues"
+  },
+  "homepage": "https://github.com/BaptisteGauduchon/node-simple-static-file-server",
+  "dependencies": {
+    "express": "latest",
+    "forever": "latest",
+    "morgan": "latest"
+  }
+}
