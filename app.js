@@ -1,10 +1,12 @@
 // modules
 var express = require("express");
 var morgan = require("morgan");
+var fs = require('fs');
+var path = require('path');
 
-// vars
+// web app
 var app = express();
-var port = +process.argv.slice(2) | 9090; // TODO : le numéro de port ne correspond pas
+var port = 8080;
 
 // middleware
 app.use(morgan('combined'));
@@ -12,7 +14,17 @@ app.use(express.static('public'));
 
 // routes
 app.get('/', function (req, res) {
- 	res.send('Append the file name you want to download to the URL. Example : 21k.ddns.net/file.zip');
+	var response = {'info' : 'Append the file name you want to download to the URL. Example : <domaine>/file.zip', 'availableFiles' : []};
+
+	fs.readdir(path.resolve(__dirname, 'public'), function (err, files) {
+		var availablesFiles = [];
+		files.forEach( function (file) {
+    		availablesFiles.push(file);
+    	});
+
+    	response.availableFiles = availablesFiles;
+    	res.send(response);
+	});
 });
 
 // server
@@ -21,3 +33,4 @@ var server = app.listen(port, function () {
 	var port = server.address().port;
 	console.log('Simple file server listening at http://%s:%s', host, port);
 });
+
