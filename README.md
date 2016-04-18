@@ -1,4 +1,4 @@
-# node-simple-static-file-server
+# Simple node.js static file server
 
 ## Description
 this app is a simple static file server.
