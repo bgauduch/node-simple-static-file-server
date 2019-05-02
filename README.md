@@ -1,3 +1,4 @@
+![Maintenance](https://img.shields.io/maintenance/no/2018.svg?style=flat-square)
 # Simple node.js static file server
 
 ## Description
